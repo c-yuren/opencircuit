@@ -42,7 +42,5 @@ If port 4318 is busy, run this from the extracted folder:
 
 ## Source and third-party components
 
-This is a trimmed runtime distribution of the existing OpenCircuit project. Earlier development history is available in [c-yuren/neighborhood-hacks](https://github.com/c-yuren/neighborhood-hacks). The original package metadata remains in `PORTABLE-ORIGIN.json`.
-
 The release includes a separate third-party source reference bundle. See [third-party notices](docs/THIRD-PARTY.md). A license for the original application code has not been designated; bundled components retain their own licenses.
 

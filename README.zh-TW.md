@@ -42,6 +42,4 @@ GitHub 自動產生的 **Source code** 壓縮檔只有執行程式與已建置�
 
 ## 來源與第三方元件
 
-這是既有 OpenCircuit 專案的精簡執行版本，更早的開發歷史保留在 [c-yuren/neighborhood-hacks](https://github.com/c-yuren/neighborhood-hacks)。原可攜套件的來源資訊保留於 `PORTABLE-ORIGIN.json`。
-
 Release 另附第三方原始碼參考包，詳見[第三方元件說明](docs/THIRD-PARTY.md)。OpenCircuit 原創應用程式目前尚未指定授權條款；內附元件各自保留原有授權。
