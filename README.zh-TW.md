@@ -37,6 +37,8 @@ GitHub 自動產生的 **Source code** 壓縮檔只有應用程式原始碼與�
 - `node_modules/`、`.local/`：Release ZIP 內附的執行環境與工具鏈；專案會在第一次啟動時建立在 `.local/projects/`。
 - `docs/`：模擬限制與第三方授權說明。
 
+如果資料夾路徑太長或含有中文，啟動程式會用一個暫時的磁碟代號指向這個資料夾再執行，因為 ESP32 編譯器在 Windows 上無法處理過長的路徑。按 Ctrl+C 停止 OpenCircuit 時會自動移除這個磁碟代號。
+
 若連接埠 4318 被占用，請在解壓後的資料夾執行以下指令，改用 4319：
 
 `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\start-portable.ps1 -ServicePort 4319`

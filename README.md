@@ -37,6 +37,8 @@ Projects are saved under `.local/projects/`. Preserve the full folder when movin
 - `node_modules/` and `.local/`: bundled runtime and toolchains in the release ZIP. Projects are created in `.local/projects/` on first start.
 - `docs/`: simulation limits and third-party notices.
 
+If the folder path is long (or contains non-ASCII characters), the launcher runs the app from a temporary drive letter that points to the folder, because the ESP32 compiler cannot handle very long paths on Windows. The drive letter is removed when you stop OpenCircuit with Ctrl+C.
+
 If port 4318 is busy, run this from the extracted folder:
 
 `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\start-portable.ps1 -ServicePort 4319`
