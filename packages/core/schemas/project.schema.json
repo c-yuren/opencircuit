@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "formatVersion": {
+      "const": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "board": {
+      "type": "string"
+    },
+    "catalogVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "profile": {
+      "enum": [
+        "led",
+        "oled",
+        "temperature",
+        "custom"
+      ]
+    }
+  },
+  "required": [
+    "formatVersion",
+    "name",
+    "board",
+    "catalogVersion",
+    "profile"
+  ],
+  "additionalProperties": false
+}

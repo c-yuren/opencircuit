@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[A-Za-z_][A-Za-z0-9_-]*$"
+      },
+      "target": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "instance",
+              "pin",
+              "net"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "kind",
+          "id"
+        ],
+        "additionalProperties": false
+      },
+      "text": {
+        "type": "string",
+        "minLength": 1
+      },
+      "baseRevision": {
+        "type": "string",
+        "minLength": 1
+      },
+      "status": {
+        "enum": [
+          "open",
+          "resolved"
+        ]
+      }
+    },
+    "required": [
+      "id",
+      "target",
+      "text",
+      "baseRevision",
+      "status"
+    ],
+    "additionalProperties": false
+  }
+}

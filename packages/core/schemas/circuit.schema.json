@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "instances": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_-]*$"
+          },
+          "typeId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "definitionVersion": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": {
+              "type": [
+                "string",
+                "number",
+                "boolean"
+              ]
+            }
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "id",
+          "typeId",
+          "definitionVersion",
+          "parameters",
+          "quantity"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "nets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_-]*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "endpoints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z_][A-Za-z0-9_-]*\\.[A-Za-z0-9_]+$"
+            },
+            "uniqueItems": true,
+            "minItems": 2
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "endpoints"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]*$"
+          },
+          "kind": {
+            "enum": [
+              "digitalOutput",
+              "digitalInput",
+              "i2cSda",
+              "i2cScl"
+            ]
+          },
+          "endpoint": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "name",
+          "kind",
+          "endpoint"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "instances",
+    "nets",
+    "bindings"
+  ],
+  "additionalProperties": false
+}

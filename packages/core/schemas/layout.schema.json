@@ -1,0 +1,143 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "properties": {
+      "x": {
+        "type": "number"
+      },
+      "y": {
+        "type": "number"
+      },
+      "kind": {
+        "enum": [
+          "component",
+          "zone",
+          "wire"
+        ]
+      },
+      "rotation": {
+        "enum": [
+          0,
+          90,
+          180,
+          270
+        ]
+      },
+      "scale": {
+        "type": "number",
+        "minimum": 0.5,
+        "maximum": 2
+      },
+      "labels": {
+        "type": "boolean"
+      },
+      "label": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "color": {
+        "type": "string",
+        "pattern": "^#[0-9a-fA-F]{6}$"
+      },
+      "width": {
+        "type": "number",
+        "minimum": 100,
+        "maximum": 2000
+      },
+      "height": {
+        "type": "number",
+        "minimum": 80,
+        "maximum": 2000
+      },
+      "wireStyle": {
+        "enum": [
+          "orthogonal",
+          "straight",
+          "curve"
+        ]
+      },
+      "wireWidth": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 6
+      },
+      "wireBend": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "x",
+          "y"
+        ],
+        "additionalProperties": false
+      },
+      "wireRoutes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "string",
+              "minLength": 1
+            },
+            "to": {
+              "type": "string",
+              "minLength": 1
+            },
+            "points": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "x",
+                  "y"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "color": {
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$"
+            },
+            "wireWidth": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6
+            }
+          },
+          "required": [
+            "from",
+            "to",
+            "points"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "x",
+      "y"
+    ],
+    "additionalProperties": false
+  }
+}

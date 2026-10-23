@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "fqbn": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+:[A-Za-z0-9_-]+:[A-Za-z0-9_-]+$"
+    },
+    "core": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+:[A-Za-z0-9_-]+$"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "libraries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9 _.-]+$"
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+          }
+        },
+        "required": [
+          "name",
+          "version"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "buildProperties": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^build\\.(partitions=(default|huge_app|min_spiffs|no_ota)|flash_size=(4MB|8MB|16MB)|f_cpu=(80000000L|160000000L|240000000L)|boot=(dio|qio)|flash_mode=(dio|qio))$"
+      }
+    }
+  },
+  "required": [
+    "fqbn",
+    "core",
+    "libraries",
+    "buildProperties"
+  ],
+  "additionalProperties": false
+}
