@@ -1,7 +1,14 @@
 {
-  "createdAt": "2026-10-23T01:07:10.645Z",
-  "sourceCommit": "9c354fd013887e2d3ce6822f3bb56b23d8a2ac96",
-  "includesUncommittedChanges": true,
-  "pythonArchiveSha256": "97dae5274cc54867065e8d5a3226e48c35017ed332a0fdb0e27d5b5821961297",
-  "platform": "win32-x64"
+    "createdAt":  "2026-10-23T15:04:13.7868417Z",
+    "sourceRepository":  "c-yuren/neighborhood-hacks",
+    "sourceCommit":  "42298e52fc0e451188e8d582c264fed8bb5330f9",
+    "sourceTag":  "v0.1.0-hackathon",
+    "publishRepository":  "c-yuren/opencircuit",
+    "publishBaseCommit":  "99bcf854cc3b7591464b75fd70b7e88adcd67b7a",
+    "includesUncommittedChanges":  true,
+    "uncommittedChanges":  "Feedback and update buttons (apps/web/src/support.ts, SupportActions.tsx, App.tsx, ProjectManager.tsx, Toolbar.tsx, i18n.en.ts, style.css), vite.config.ts version injection and .github/ISSUE_TEMPLATE, taken from the source working tree after typecheck, unit and e2e tests passed.",
+    "note":  "Other application files are byte-identical to the source commit, except the portable README files, docs/THIRD-PARTY.md, package.json (scripts and MIT license field), .gitignore, LICENSE and the offline install-and-start.cmd.",
+    "pythonArchiveSha256":  "97dae5274cc54867065e8d5a3226e48c35017ed332a0fdb0e27d5b5821961297",
+    "pythonSource":  "Python 3.13.16 embeddable amd64, copied from the previous portable package",
+    "platform":  "win32-x64"
 }

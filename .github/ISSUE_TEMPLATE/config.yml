@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 模擬限制說明 / Simulation limits
+    url: https://github.com/c-yuren/opencircuit/blob/main/docs/SIMULATION.md
+    about: 回報前請先確認功能是否在支援範圍內 / Check whether a feature is supported before reporting

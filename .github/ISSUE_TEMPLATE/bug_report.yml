@@ -1,0 +1,75 @@
+name: 問題回報 / Bug report
+description: 回報 OpenCircuit 的錯誤或異常行為 / Report a bug or unexpected behavior
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感謝回報！請勿貼上密碼、token、個人資料或完整的本機路徑。
+        Thanks for reporting! Do not paste passwords, tokens, personal data or full local paths.
+  - type: input
+    id: version
+    attributes:
+      label: OpenCircuit 版本 / Version
+      description: 從 app 內的「回報問題」開啟時會自動填入 / Filled in when opened from Report an issue
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 作業系統與瀏覽器 / OS and browser
+      placeholder: Windows 11, Chrome
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 問題範圍 / Area
+      options:
+        - 畫布與接線 / Canvas and wiring
+        - 編譯 / Compile
+        - Arduino Uno 模擬 / Uno simulation
+        - ESP32 模擬 / ESP32 simulation
+        - 寫入裝置與序列埠 / Upload and serial monitor
+        - 材料與成本 / Materials and cost
+        - 專案、匯出與版本紀錄 / Projects, export and history
+        - 安裝與啟動 / Installation and startup
+        - 其他 / Other
+    validations:
+      required: true
+  - type: dropdown
+    id: board
+    attributes:
+      label: 開發板 / Board
+      options:
+        - 未使用 / Not relevant
+        - Arduino Uno R3
+        - ESP32-DevKitC V4
+        - 其他 / Other
+  - type: textarea
+    id: description
+    attributes:
+      label: 發生了什麼事？/ What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 重現步驟 / Steps to reproduce
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 預期結果 / Expected behavior
+  - type: textarea
+    id: logs
+    attributes:
+      label: 輸出或錯誤訊息 / Output or error messages
+      description: 可貼上「輸出」分頁或命令視窗的內容 / Paste text from the Output tab or the command window
+      render: text

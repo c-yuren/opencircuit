@@ -1,0 +1,25 @@
+name: 功能建議 / Feature request
+description: 提出新功能或改善建議 / Suggest a new feature or an improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 想解決什麼問題？/ What problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建議的做法 / Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 其他考慮過的做法 / Alternatives considered
+  - type: input
+    id: hardware
+    attributes:
+      label: 相關的開發板或元件 / Related boards or parts
+      placeholder: ESP32, OLED, DHT22

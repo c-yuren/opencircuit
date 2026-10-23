@@ -15,7 +15,7 @@ Build circuits with your AI coding agent. Design, compile, simulate, plan materi
 
 Node.js, Python, npm dependencies, Arduino CLI, AVR and ESP32 cores, Arduino libraries, and PICSimLab QEMU are included. No npm installation is needed to start. Board-specific USB drivers may still be required. Install and sign in to your AI coding agent separately.
 
-GitHub's automatic **Source code** archives contain the runtime source and built web interface, but do not include the bundled environment. Use the portable release ZIP to run the complete package.
+GitHub's automatic **Source code** archives contain the application source and built web interface, but do not include the bundled environment. Use the portable release ZIP to run the complete package.
 
 ## What you can do
 
@@ -32,7 +32,8 @@ Projects are saved under `.local/projects/`. Preserve the full folder when movin
 - `start-opencircuit.cmd`: main launcher.
 - `scripts/start-portable.ps1`: configures bundled tools for the current folder.
 - `apps/server/`, `packages/` and `bin/`: runtime backend and CLI source.
-- `dist/web/`: built browser interface.
+- `apps/web/` and `vite.config.ts`: browser interface source.
+- `dist/web/`: built browser interface, generated from `apps/web/`.
 - `node_modules/` and `.local/`: bundled runtime, toolchains, and projects in the release ZIP.
 - `docs/`: simulation limits and third-party notices.
 
@@ -40,7 +41,15 @@ If port 4318 is busy, run this from the extracted folder:
 
 `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\start-portable.ps1 -ServicePort 4319`
 
-## Source and third-party components
+## Feedback and updates
 
-The release includes a separate third-party source reference bundle. See [third-party notices](docs/THIRD-PARTY.md). A license for the original application code has not been designated; bundled components retain their own licenses.
+Use **Report an issue** on the project home page or in the workspace “⋯” menu to open a GitHub issue form with your OpenCircuit version and browser filled in. **Check for updates** asks GitHub for the latest release. Both contact GitHub only when you click them, and neither sends project content or local file paths.
+
+## Build the interface from source
+
+Requires Node.js 22.12 or newer. Run `npm ci` once, then `npm run build` to regenerate `dist/web/` from `apps/web/`. `npm run dev` starts a live-reloading interface at http://127.0.0.1:5173 with the API on port 4318.
+
+## License
+
+OpenCircuit is released under the [MIT License](LICENSE). Bundled third-party components keep their own licenses. The release includes a separate third-party source reference bundle; see [third-party notices](docs/THIRD-PARTY.md).
 

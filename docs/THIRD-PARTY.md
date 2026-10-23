@@ -1,6 +1,6 @@
 # Third-party components and sources
 
-OpenCircuit's application code and its separately installed or bundled tools are distinct components. Original license and copyright notices remain in the npm packages, Node.js, Python, board packages, libraries and PICSimLab directories. No license for the original OpenCircuit application code has been designated yet; public availability alone is not an additional license grant.
+OpenCircuit's application code and its separately installed or bundled tools are distinct components. Original license and copyright notices remain in the npm packages, Node.js, Python, board packages, libraries and PICSimLab directories. The original OpenCircuit application code is licensed under the MIT License (see [LICENSE](../LICENSE)); that license does not change the terms of any third-party component.
 
 ## Windows portable tools
 
