@@ -34,7 +34,7 @@ GitHub 自動產生的 **Source code** 壓縮檔只有應用程式原始碼與�
 - `apps/server/`、`packages/`、`bin/`：執行時需要的後端與 CLI 原始程式。
 - `apps/web/`、`vite.config.ts`：瀏覽器介面的原始程式。
 - `dist/web/`：由 `apps/web/` 建置的瀏覽器介面。
-- `node_modules/`、`.local/`：Release ZIP 內附的執行環境、工具鏈與專案。
+- `node_modules/`、`.local/`：Release ZIP 內附的執行環境與工具鏈；專案會在第一次啟動時建立在 `.local/projects/`。
 - `docs/`：模擬限制與第三方授權說明。
 
 若連接埠 4318 被占用，請在解壓後的資料夾執行以下指令，改用 4319：

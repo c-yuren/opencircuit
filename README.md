@@ -9,7 +9,7 @@ Build circuits with your AI coding agent. Design, compile, simulate, plan materi
 ## Quick start
 
 1. Download **OpenCircuit-Windows-x64.zip** from Releases.
-2. Extract the complete folder to a writable location.
+2. Extract the complete folder to a writable location. Do not run it inside the ZIP.
 3. Double-click **start-opencircuit.cmd**.
 4. Keep the command window open. The app opens at http://127.0.0.1:4318/#workspace . Press Ctrl+C to stop.
 
@@ -34,7 +34,7 @@ Projects are saved under `.local/projects/`. Preserve the full folder when movin
 - `apps/server/`, `packages/` and `bin/`: runtime backend and CLI source.
 - `apps/web/` and `vite.config.ts`: browser interface source.
 - `dist/web/`: built browser interface, generated from `apps/web/`.
-- `node_modules/` and `.local/`: bundled runtime, toolchains, and projects in the release ZIP.
+- `node_modules/` and `.local/`: bundled runtime and toolchains in the release ZIP. Projects are created in `.local/projects/` on first start.
 - `docs/`: simulation limits and third-party notices.
 
 If port 4318 is busy, run this from the extracted folder:
